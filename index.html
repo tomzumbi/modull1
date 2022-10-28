@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta charset="UTF-8">
+    <title>Student Management</title>
+    <style>
+        #divhead {
+            background-color: black;
+            color: white;
+
+
+        }
+        #login {
+            margin-left: 1150px;
+        }
+
+        @import url(https://fonts.googleapis.com/css?family=BenchNine:700);
+
+        .snip1582 {
+            background-color: #c47135;
+            border: none;
+            color: #ffffff;
+            cursor: pointer;
+            display: inline-block;
+            font-family: 'BenchNine', Arial, sans-serif;
+            font-size: 1em;
+            font-size: 22px;
+            line-height: 1em;
+            margin: 15px 40px;
+            outline: none;
+            padding: 12px 40px 10px;
+            /*position: relative;*/
+            text-transform: uppercase;
+            font-weight: 700;
+        }
+
+        .snip1582:before,
+        .snip1582:after {
+            border-color: transparent;
+            -webkit-transition: all 0.25s;
+            transition: all 0.25s;
+            border-style: solid;
+            border-width: 0;
+            content: "";
+            height: 24px;
+            /*position: absolute;*/
+            width: 24px;
+        }
+
+        .snip1582:before {
+            border-color: #c47135;
+            border-top-width: 2px;
+            left: 0px;
+            top: -5px;
+        }
+
+        .snip1582:after {
+            border-bottom-width: 2px;
+            border-color: #c47135;
+            bottom: -5px;
+            right: 0px;
+        }
+
+        .snip1582:hover,
+        .snip1582.hover {
+            background-color: #c47135;
+        }
+
+        .snip1582:hover:before,
+        .snip1582.hover:before,
+        .snip1582:hover:after,
+        .snip1582.hover:after {
+            height: 100%;
+            width: 100%;
+        }
+
+        h1 {
+            background-color: greenyellow;
+            font-family: "Fira Code Retina";
+        }
+
+        marquee {
+            font-size: larger;
+            background-color: blueviolet;
+            color: white;
+
+        }
+
+
+        .text {
+            text-transform: uppercase;
+            background: linear-gradient(to right, #30CFD0 0%, #330867 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+
+        }
+
+        #logo {
+            margin-left: 100px;
+        }
+
+        #hcld {
+            margin-bottom: 12px;
+        }
+
+
+        a {
+            color: white;
+        }
+
+        table, th, td {
+            border: 1px solid #868585;
+        }
+
+        table {
+            border-collapse: collapse;
+        }
+
+        table tr:nth-child(odd) {
+            background-color: #eee;
+        }
+
+        table tr:nth-child(even) {
+            background-color: white;
+        }
+
+        table tr:nth-child(1) {
+            background-color: skyblue;
+        }
+
+        #tthv {
+            background-color: aqua;
+            color: chocolate;
+            font-size: 23px;
+        }
+
+        footer {
+
+            float: left;
+        }
+
+        #pfoot {
+            font-family: "Times New Roman";
+            color: white;
+        }
+
+        h2 {
+            color: white;
+            text-align: center;;
+        }
+
+        #coppybyright {
+
+            color: white;
+            font-family: "Times New Roman";
+        }
+
+
+
+    </style>
+</head>
+<body>
+
+<div id="divhead">
+
+        <p id="login">
+            <a href="dangnhap.html">
+            Đăng nhập
+            </a>
+            <a href="dangky.html">
+                | Đăng kí
+            </a>
+        </p>
+
+</div>
+
+
+
+<a href="https://www.uit.edu.vn" target="_blank">
+    <img src="https://www.uit.edu.vn/sites/vi/files/banner_uit_0.png" title="Đại học công nghệ thông tin" id="logo">
+</a>
+
+<img src="https://www.uit.edu.vn/sites/vi/files/uploads/images/hcld.png" style="width: 85px" id="hcld">
+
+<marquee>
+    Đại học công nghệ thông tin - Đại học quốc gia Thành Phố Hồ Chí Minh
+    &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+    Wedsite: <a href="https://www.uit.edu.vn/" target="_blank">https://www.uit.edu.vn/</a>
+    &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+    SĐT: 02837252002
+</marquee>
+
+
+<h1 style="text-align: center" class="text"> QUẢN LÝ HỌC VIÊN </h1>
+
+<table style=" border: 1px solid black; width: 58%; float: right">
+    <thead>
+    <tr>
+        <th style="font-size: 40px" colspan="7">Danh sách học viên</th>
+    </tr>
+    <tr>
+        <th>STT</th>
+        <th>Họ tên</th>
+        <th>Ngày sinh</th>
+        <th>Giới tính</th>
+        <th>Lớp</th>
+        <th>Ảnh</th>
+        <th>Tùy chọn</th>
+    </tr>
+    </thead>
+    <tbody id="bang2">
+    </tbody>
+</table>
+
+<table border="1" style="width:40%; height: 30-0px" ;>
+    <tr id="id1">
+        <th colspan="2" id="tthv"> Thông tin học viên</th>
+    </tr>
+
+    <tr style="text-align: center">
+        <th>STT</th>
+        <td><input type="number" id="id" disabled></td>
+
+    </tr>
+    <tr style="text-align: center">
+        <th>Họ tên</th>
+        <td><input type="text" id="fullname" placeholder="Nhập tên của bạn"></td>
+    </tr>
+    <tr style="text-align: center">
+        <th>Ngày sinh</th>
+        <td><input type="date" id="date" style="width: 170px"></td>
+    </tr>
+    <tr style="text-align: center">
+        <th>Giới tính</th>
+        <td><select id="gender" style="width: 175px;">
+            <option>Nam</option>
+            <option>Nữ</option>
+        </select></td>
+    </tr>
+    <tr style="text-align: center">
+        <th>Lớp</th>
+        <td><input type="text" id="grade"></td>
+    </tr>
+    <tr style="text-align: center">
+        <th>Ảnh</th>
+        <td><input type="text" id="img"></td>
+    </tr>
+    <tr>
+        <th></th>
+        <td>
+            <button class="snip1582" id="add" onclick="add()" style="font-family: 'Times New Roman'">Add</button>
+            <button class="snip1582" id="edit" onclick="save()" style="font-family: 'Times New Roman'">Save</button>
+
+        </td>
+    </tr>
+</table>
+
+
+</body>
+
+<footer>
+    <br>
+    <br>
+    <marquee style="background-color: darkmagenta">
+        Địa chỉ: Khu phố 6, P.Linh Trung, Tp.Thủ Đức, Tp.Hồ Chí Minh
+    </marquee>
+    <hr style="height: 1px; background-color: black">
+    <table>
+        <tr>
+            <td width="50%" style="background-color: darkorchid">
+                <div>
+                    <img src="https://www.uit.edu.vn/sites/vi/files/uploads/images/banner_footer.png">
+                </div>
+                <div>
+                    <p id="pfoot">
+                        SỨ MẠNG <br>
+
+                        - Trường Đại học Công nghệ Thông tin là một trung tâm đào tạo đại học, sau đại học cung cấp
+                        nguồn nhân lực chất lượng cao, nhằm đáp ứng nhu cầu của thị trường lao động và phục vụ cộng
+                        đồng.<br>
+                        - Trường Đại học Công nghệ Thông tin là một trung tâm hàng đầu về nghiên cứu khoa học và chuyển
+                        giao công nghệ về công nghệ thông tin – truyền thông và các lĩnh vực liên quan.<br>
+
+                        TẦM NHÌN<br>
+
+                        Trường Đại học Công nghệ Thông tin trở thành trường đại học uy tín về công nghệ thông tin –
+                        truyền thông và các lĩnh vực liên quan trong khu vực Châu Á.<br>
+
+                        <br>
+                    <p id="coppybyright">© Copyright Trường Đại học Công nghệ Thông tin</p>
+
+
+                    </p>
+                </div>
+        </tr>
+
+
+    </table>
+
+
+</footer>
+</html>
+
+<!--<script>-->
+<!--    let names = JSON.parse(localStorage.getItem("names"));-->
+<!--    if (!Array.isArray(names)) {-->
+<!--        names = [];-->
+<!--    }-->
+
+<!--    let divShow = document.getElementById("bang2");-->
+<!--    show();-->
+
+
+<!--    function show() {-->
+<!--        let str = "";-->
+<!--        for (let i = 0; i < names.length; i++) {-->
+<!--            names[i][0] = i + 1-->
+<!--            str += `<tr>-->
+<!--                        <td style="text-align: center">${names[i][0]}</td>-->
+<!--                        <td>${names[i][1]}</td>-->
+<!--                        <td>${names[i][2]}</td>-->
+<!--                        <td>${names[i][3]}</td>-->
+<!--                        <td>${names[i][4]}</td>-->
+<!--                        <td><img src="${names[i][5]}" style="width: 100px"></td>-->
+
+<!--                        <td>-->
+<!--                        <button onclick="edit(${i})">Edit</button>-->
+<!--                        <button onclick="xoa(${i})">Delete</button>-->
+<!--                        </td>-->
+<!--                        </tr>`-->
+
+<!--        }-->
+<!--        divShow.innerHTML = str-->
+<!--        localStorage.setItem("names", JSON.stringify(names));-->
+<!--    }-->
+
+<!--    function tralai() {-->
+<!--        document.getElementById("id").value = ""-->
+<!--        document.getElementById("fullname").value = ""-->
+<!--        document.getElementById("date").value = ""-->
+<!--        document.getElementById("gender").value = ""-->
+<!--        document.getElementById("grade").value = ""-->
+<!--        document.getElementById("img").value = ""-->
+<!--    }-->
+
+<!--    // let index = 1-->
+<!--    function add() {-->
+<!--        // let id = index-->
+<!--        let id = names.length-->
+<!--        let name = document.getElementById("fullname").value;-->
+<!--        let date = document.getElementById("date").value;-->
+<!--        let gender = document.getElementById("gender").value;-->
+<!--        let grade = document.getElementById("grade").value;-->
+<!--        let img = document.getElementById("img").value-->
+<!--        names.push([id, name, date, gender, grade, img]);-->
+<!--        localStorage.setItem("names", JSON.stringify(names));-->
+<!--        show();-->
+<!--        tralai()-->
+<!--        // index ++-->
+<!--        id = names.length-->
+
+<!--    }-->
+
+<!--    function xoa(i) {-->
+<!--        names.splice(i, 1)-->
+<!--        localStorage.setItem("names", JSON.stringify(names));-->
+<!--        show()-->
+<!--        // index&#45;&#45;-->
+<!--    }-->
+
+<!--    let a = 0-->
+
+<!--    function edit(i) {-->
+<!--        document.getElementById("id").value = i + 1-->
+<!--        document.getElementById("fullname").value = names[i][1]-->
+<!--        document.getElementById("date").value = names[i][2]-->
+<!--        document.getElementById("gender").value = names[i][3]-->
+<!--        document.getElementById("grade").value = names[i][4]-->
+<!--        document.getElementById("img").value = names[i][5]-->
+<!--        a = i-->
+<!--    }-->
+
+<!--    function save() {-->
+<!--        let id = document.getElementById("id").value;-->
+<!--        let name = document.getElementById("fullname").value;-->
+<!--        let date = document.getElementById("date").value;-->
+<!--        let gender = document.getElementById("gender").value;-->
+<!--        let grade = document.getElementById("grade").value;-->
+<!--        let img = document.getElementById("img").value-->
+<!--        names[a][1] = name-->
+<!--        names[a][2] = date-->
+<!--        names[a][3] = gender-->
+<!--        names[a][4] = grade-->
+<!--        names[a][5] = img-->
+<!--        show()-->
+<!--        tralai()-->
+<!--    }-->
+
+
+</script>
